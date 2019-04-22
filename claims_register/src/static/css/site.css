@@ -1,0 +1,17 @@
+.main-center-container{
+    max-width: 90%;
+    height: 100%;
+    background: orange;
+    margin: 5rem;
+}
+.card{
+    width: 12rem;
+    margin: 1rem;
+    float: left;
+    height: auto;
+    min-height: 18rem;
+}
+.btn-claim{
+    position: absolute;
+    bottom: 0.2rem
+}
