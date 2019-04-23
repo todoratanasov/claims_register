@@ -6,7 +6,6 @@ router.get('/', (req, res)=>{
     Claim
         .find({})
         .then((claims)=>{
-            console.log(claims)
             res.status(200).json({
                 success:true,
                 message:"All claims returned",

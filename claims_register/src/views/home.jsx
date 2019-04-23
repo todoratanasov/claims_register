@@ -40,7 +40,7 @@ class Home extends Component {
                             )
                         })
                         :
-                        <div>There are no claims in DB</div>
+                        <div>Please log in in order to use the full functionality and view the claims</div>
                 }
                 </div>
             </Fragment>

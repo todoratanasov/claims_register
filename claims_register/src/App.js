@@ -5,7 +5,9 @@ import { UserProvider, defaultUserState } from './components/contexts/user-conte
 import AuthorizedRoute from './components/authorized-route'
 import Logout from './views/logout';
 import ClaimDetails from './views/claim-details'
-
+import Visit from './views/create-visit'
+import Search from './components/search';
+import NotFound from "./components/not-found"
 const CreateNewClaim = lazy(() => import('./views/create-new-claim'));
 const Home = lazy(() => import('./views/home'));
 const Register = lazy(() => import('./views/register'));
@@ -45,12 +47,16 @@ class App extends Component {
             </div>}>
               <div className="d-flex justify-content-center">
                 <Switch>
+                  <Route path="/search" component={Search}/>
                   <Route path="/register" component={Register} />
+                  <Route path="/createvisit:id" component={Visit} />
                   <Route path="/" exact={true} component={Home} />
                   <Route path="/login" component={Login} />
-                  <Route path="/claimdetails:id" component={ClaimDetails} />
+                  <AuthorizedRoute path="/claimdetails:id" component={ClaimDetails} allowedRoles={['admin']}/>
                   <AuthorizedRoute path="/logout" component={Logout}/>
-                  <Route path="/createnewclaim" component={CreateNewClaim} />
+                  <AuthorizedRoute path="/createnewclaim" component={CreateNewClaim} allowedRoles={['user']}/>
+                  <Route component={NotFound}/>
+                  
                 </Switch>
               </div>
             </Suspense>
