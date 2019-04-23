@@ -1,5 +1,6 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import {Redirect} from 'react-router-dom';
+
 class CreateNewClaim extends Component {
     constructor(props) {
         super(props);
@@ -52,6 +53,7 @@ class CreateNewClaim extends Component {
             return <Redirect to="/"/>
         }
         return (
+            
             <form onSubmit={this.handleSubmit}>
                 <div className="form-row">
                     <div className="form-group col-md-6">

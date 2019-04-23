@@ -53,6 +53,7 @@ class Login extends Component{
                    updateUser,
                    ...result.user
                });
+               
     
             }catch(error){
                 this.setState({

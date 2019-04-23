@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { UserProvider, defaultUserState } from './components/contexts/user-context';
 import AuthorizedRoute from './components/authorized-route'
 import Logout from './views/logout';
+import ClaimDetails from './views/claim-details'
 
 const CreateNewClaim = lazy(() => import('./views/create-new-claim'));
 const Home = lazy(() => import('./views/home'));
@@ -34,7 +35,6 @@ class App extends Component {
   }
   render() {
     const {user}=this.state;
-    console.log(user)
     return (
       <Router>
         <Fragment>
@@ -48,6 +48,7 @@ class App extends Component {
                   <Route path="/register" component={Register} />
                   <Route path="/" exact={true} component={Home} />
                   <Route path="/login" component={Login} />
+                  <Route path="/claimdetails:id" component={ClaimDetails} />
                   <AuthorizedRoute path="/logout" component={Logout}/>
                   <Route path="/createnewclaim" component={CreateNewClaim} />
                 </Switch>

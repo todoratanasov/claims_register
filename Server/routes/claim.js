@@ -19,5 +19,7 @@ router.post('/create',(req, res) => {
             console.log("Something is wrong with adding claim"+err)
         });
     });
+
+    router.get('')
     
 module.exports = router;
